@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+email-validator
+
+
+
+
+
+
+
+
+
+
+
+
+# fastapi
+# uvicorn
