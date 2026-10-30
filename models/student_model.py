@@ -45,24 +45,14 @@ class Student(StudentCreate):
 #     id: int
     
     
-#   Q2. a. Create a FastAPI application (without database) for  library book inventory,storing data in an in-memory dictionary. 
-#    (i) Define a Pydantic model Book with ibsn(str), title(str), author(str), copies(int,must be 0 or more).
-#    (ii) Create POST /books (return HTTP 400 if the ISBN already exists) , GET/books to list all books, GET/books/{isbn} (return HTTP 404 if not found).    
-#   b. Extend the above application:
-#       (i) Add PATCh /books/{isbn} borrow that reduces the number odf copies by one, and return HTTP 409 if no copies are available.
-#       (ii) Add a GET/health endpoint that returns{"ststus":"ok"}.
-#       (iii) Write the pip command to install the required packages and the uvicorn command to start the app.
-         
+#  Q3. a. Extend your CI workflow into a CI/CD pipeline with two jobs,test and deploy:
+# (i) The test job installas dependencies and runs pytest.
+# (ii) The deploy job must run only after the test job succeds (use needs) and only for pushes to the main branch.
+# (iii)  The delpoy job calls the RenderDeploy HOOK URL using curl, where the URL is stored as a GitHub secret named RENDER_DEPLOY_HOOK
     
     
     
     
-    
-    
-#     Q1. a. Create a FastAPI application(without database) for managing students,storing data in an in-memory python list. 
-#     (i) Define a Pydantic model Student with id(int), name(str), course(str), marks(float,must be between0 and 100).
-#     (ii) Create POST /students to add a student,GET/students/{id} to fetch one student(return HTTP 404 if not found)
-#     b. Extend the above application:
-#         (i) Add PUT /students/{id} to update student and DELETE /students/{id} to delete a student.
-#         (ii) Add an optional query parameter course to GET / students to filter students by course.
-#         (iii) Write the uvicorn command to run the app with auto-reload and stste the URL where Swagger UI can be tested.
+# Q4. Write a docker-compose.yml file(no database) that:
+# (i) Builds the FASTAPI app from the Dockerfile in the current folder and names the service api.
+# (ii) Maps port 8000 of the host to port 8000 of the container.
